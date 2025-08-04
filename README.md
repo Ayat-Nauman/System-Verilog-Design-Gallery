@@ -1,2 +1,2 @@
 # System-Verilog-Design-Gallery
-### This repository contain begginer level system verilog codes for educational purpose only.
+### This repository contain basic level RTL designs for educational purpose only.
