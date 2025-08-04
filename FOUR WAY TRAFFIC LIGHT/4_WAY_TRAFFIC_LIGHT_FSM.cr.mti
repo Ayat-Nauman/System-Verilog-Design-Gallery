@@ -1,0 +1,8 @@
+{A:/MODELSIM PROJECTS/traffic_light_tb.sv} {1 {vlog -work work -sv -stats=none {A:/MODELSIM PROJECTS/traffic_light_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module traffic_light_tb
+
+Top level modules:
+	traffic_light_tb
+
+} {} {}}

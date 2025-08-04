@@ -1,0 +1,89 @@
+//Define timescale
+// This line sets the timing for simulation:
+// - 1ns = All delay values like #1 mean 1 nanosecond.
+// - 1ps = The simulator measures time with 1 picosecond accuracy.
+// for example: #0.123 will be interpreted as 123ps (since 1ns = 1000ps)
+
+
+`timescale 1ns/1ns
+
+//Define testbench module
+// unlike DUT, testbench module definition does not require paranthesis
+// inputs and outputs are not defined explicitly
+// testbench and DUT's input and outputs may have similar names
+module traffic_light_tb;
+	logic clk;
+	logic rst;
+	logic switch_to_a; 
+	logic switch_to_b;
+	logic switch_to_c;
+	logic switch_to_d;
+	logic [4-1:0] light_en;
+
+// Instantiate DUT - Design under test
+// write the name of module and then give a name to that instantiation.
+// Here "traffic_light" is the name of module and "DUT" is the name of instance.
+traffic_light DUT( 
+	.clk(clk),
+	.rst(rst),
+	.switch_to_a(switch_to_a), 
+	.switch_to_b(switch_to_b),
+	.switch_to_c(switch_to_c),
+	.switch_to_d(switch_to_d),
+	.light_en(light_en)
+);
+
+//clock setting
+always begin
+ clk = !clk;
+#5;
+end
+
+// drive stimulus - give inputs
+initial begin
+//assign input values to the test bench variables
+// Give at least two to three test cases
+
+//Default Test case 1: initialaization of clock 
+clk = 1'b0;
+rst = 1'b0; // once the reset is asserted, it should be released
+switch_to_a = 1'b0;
+switch_to_b = 1'b0;
+switch_to_c = 1'b0;
+switch_to_d = 1'b0;
+# 20;
+
+// Test case 2: switch A is ON
+rst = 1'b1; // release reset
+switch_to_a = 1'b1;
+switch_to_b = 1'b0;
+switch_to_c = 1'b0;
+switch_to_d = 1'b0;
+# 20;
+
+// Test case 2: switch B is ON
+switch_to_a = 1'b0;
+switch_to_b = 1'b1;
+switch_to_c = 1'b0;
+switch_to_d = 1'b0;
+# 30;
+
+// Test case 3: switch C is ON
+switch_to_a = 1'b0;
+switch_to_b = 1'b0;
+switch_to_c = 1'b1;
+switch_to_d = 1'b0;
+# 40;
+
+// Test case 4: switch D is ON
+switch_to_a = 1'b0;
+switch_to_b = 1'b0;
+switch_to_c = 1'b0;
+switch_to_d = 1'b1;
+# 50;
+
+$finish; //this finishes the simulator alternatively $stop can be used 
+
+end
+
+endmodule
