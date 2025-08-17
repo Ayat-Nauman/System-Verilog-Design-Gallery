@@ -1,8 +1,0 @@
-{A:/MODELSIM PROJECTS/pipeline.sv} {1 {vlog -work work -sv -stats=none {A:/MODELSIM PROJECTS/pipeline.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module pipeline
-
-Top level modules:
-	pipeline
-
-} {} {}}
