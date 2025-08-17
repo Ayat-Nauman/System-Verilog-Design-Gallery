@@ -4,6 +4,7 @@ This project demonstrates a **4-stage pipeline** implemented in SystemVerilog. T
 <p align="center">
   <b>X = 5A + 5B - 4C + 3D </b>
 </p>
+
 ## Hardware level Pipelining Block Diagram 
 
 ![Pipelining_example_RTL](https://github.com/user-attachments/assets/963e2db7-380c-4fca-a1e5-6728acc71b55)
